@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<buapxcas>
+    <!-- 应用地址 -->
+    <platAddress>http://www.cloudfashion.org</platAddress>
+    <!-- 跳转地址,一般与应用地址相同 -->
+    <redirectAddress>http://www.cloudfashion.org</redirectAddress>
+    <!-- 回调地址,不需要改动 -->
+    <appCallback>/cas_callback.jsp</appCallback>
+    <!-- 超时重登陆路径,不需要改动 -->
+    <appRelogin>buapx_relogin.jsp</appRelogin>
+
+    <!-- 重登陆时验证老密码接口地址-->
+    <validatePasswordAddress>http://www.cloudfashion.org/cas/buapxInvalidatePassword</validatePasswordAddress>
+    <!--登录成功后默认跳转页  -->
+    <appDefaultTargetUrl>/index</appDefaultTargetUrl>
+    <!-- 登录失败时的默认跳转页 -->
+    <authErrorPage>/caserror.html</authErrorPage>
+    <!-- 是否强制重新登录 -->
+    <sendRenew>false</sendRenew>
+    <!-- 后置处理器 -->
+    <postHandlers>
+        com.baosight.scc.ec.security.CustomPostHandler
+    </postHandlers>
+    <!-- cas登录地址 -->
+    <loginUrl>http://www.cloudfashion.org/cas/login</loginUrl>
+    <!-- 验证票据地址 -->
+    <validateUrl>http://10.80.246.6:9080/cas</validateUrl>
+    <!-- 编码 -->
+    <encoding>UTF-8</encoding>
+    <!-- 系统唯一标示符 -->
+    <platName>buap</platName>
+    <!-- 不拦截的过滤路径 -->
+    <exceptSecurityFilterUrl>
+        /
+        /index*
+        /logout
+        /notfound
+        /innererror
+        /fabric/*
+        /search/*
+        /material/*
+        /synchronize/*
+        /fabricfirstcategory/**/*
+        /materialfirstcategory/**/*
+        /fabric/**/comments*
+        /fabric/**/orders*
+        /material/**/comments*
+        /material/**/orders*
+        /provider/*
+        /shopcenter/**/*
+        /info/*
+        /notice/*
+        /info*
+        /notice*
+        /topic*
+        /topic/*
+        /shoppingcart/*
+        /samplebook/*
+        /demandorderlist*
+        /demandorder/*
+        /**/login*.jsp*
+        /**/logout.jsp*
+        /resources/**
+        /**/*.jpg
+        /**/*.js
+        /**/*.gif
+        /**/*.bmp
+        /**/*.png
+        /**/*.css
+        /**/*.json
+        /remote/json/*
+        /json/**
+        /share/**/**/**/**/**
+        /help
+        /help/**
+    </exceptSecurityFilterUrl>
+    <!-- 拦截路径 -->
+    <securityFilterUrl>/**</securityFilterUrl>
+    <!--登录成功时，是否重定向至原始访问路径  -->
+    <redirectToOriginal>true</redirectToOriginal>
+    <!-- 额外的service参数 ,一般不需要修改-->
+    <awaredServiceProperties>sourceSystem</awaredServiceProperties>
+    <!-- 额外的cas参数,一般不需要修改 -->
+    <options>loginType</options>
+    <extParams>
+    </extParams>
+    <!-- 客户端类型，目前有iplat4j和bs两种 -->
+    <clientType>iplat4j</clientType>
+    <!-- 是否集群 -->
+    <isCluster>false</isCluster>
+    <!-- 域名 -->
+    <domain></domain>
+    <!-- 跳转逻辑 -->
+    <userRedirectManager>com.baosight.buapx.security.loginbiz.DefaultRedirectManager</userRedirectManager>
+
+</buapxcas>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+    <!--发布面料 选择分类-->
+    <definition name="material_selectCategory" extends="deploy_template">
+        <put-attribute name="main" value="/WEB-INF/view/material/materialSelectCategory.jsp"></put-attribute>
+        <put-list-attribute name="script">
+            <add-attribute value="/resources/js/material/materialSelectCategory.js"></add-attribute>
+            <add-attribute value="/resources/js/buyerCenterPublic.js"></add-attribute>
+        </put-list-attribute>
+    </definition>
+
+    <definition name="material_fillContent" extends="deploy_template">
+        <put-attribute name="main" value="/WEB-INF/view/material/materialFillContent.jsp"></put-attribute>
+        <put-list-attribute name="script">
+            <add-attribute value="/resources/ckeditor.js"></add-attribute>
+            <add-attribute value="/resources/adapters/jquery.js"></add-attribute>
+            <add-attribute value="/resources/js/ajaxfileupload.js"></add-attribute>
+            <add-attribute value="/resources/js/material/materialFillContent.js"></add-attribute>
+            <add-attribute value="/resources/js/colour/jquery-ui.js"></add-attribute>
+            <add-attribute value="/resources/js/colour/jquery-ui-1.10.3.custom.min.js"></add-attribute>
+            <add-attribute value="/resources/js/jquery.fancybox.pack.js"></add-attribute>
+            <add-attribute value="/resources/js/buyerCenterPublic.js"></add-attribute>
+        </put-list-attribute>
+    </definition>
+
+    <!-- 辅料详情 -->
+    <definition name="materialDetail" extends="item_view_template">
+        <put-attribute name="ProviderInfo" value="/WEB-INF/view/material/ProviderInfo.jsp"></put-attribute>
+        <put-attribute name="category" value="/WEB-INF/view/material/category.jsp"></put-attribute>
+        <put-attribute name="newItem" value="/WEB-INF/view/material/newItem.jsp"></put-attribute>
+        <put-attribute name="detail" value="/WEB-INF/view/material/itemDetail.jsp"></put-attribute>
+        <put-attribute name="main" value="/WEB-INF/view/material/itemMain.jsp"></put-attribute>
+        <put-list-attribute name="script">
+            <add-attribute value="/resources/js/shoppingCart.js"></add-attribute>
+            <add-attribute value="/resources/js/material/materialView.js"></add-attribute>
+            <add-attribute value="/resources/js/buyerCenterPublic.js"></add-attribute>
+            <add-attribute value="/resources/js/sampleBook.js"></add-attribute>
+            <add-attribute value="/resources/js/shop/favouriteShop.js"></add-attribute>
+        </put-list-attribute>
+    </definition>
+
+    <!--辅料搜索结果列表-->
+    <definition name="material_search" extends="searchResult_template">
+        <put-attribute name="main" value="/WEB-INF/view/material/searchMaterial.jsp"></put-attribute>
+        <put-list-attribute name="script">
+            <add-attribute value="/resources/js/buyerCenterPublic.js"></add-attribute>
+            <add-attribute value="/resources/js/material/search.js"></add-attribute>
+            <add-attribute value="/resources/js/geo.js"></add-attribute>
+        </put-list-attribute>
+    </definition>
+
+</tiles-definitions>

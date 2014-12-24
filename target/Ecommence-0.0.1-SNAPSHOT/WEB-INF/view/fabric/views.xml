@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+    <!--detail template-->
+    <definition name="item_view_template" template="/WEB-INF/view/template/detail-view.jsp">
+        <put-attribute name="header" value="/WEB-INF/view/template/header.jsp"></put-attribute>
+        <put-attribute name="footer" value="/WEB-INF/view/template/footer.jsp"></put-attribute>
+        <put-attribute name="ProviderInfo" value="/WEB-INF/view/fabric/ProviderInfo.jsp"></put-attribute>
+        <put-attribute name="category" value="/WEB-INF/view/fabric/category.jsp"></put-attribute>
+        <put-attribute name="newItem" value="/WEB-INF/view/fabric/newItem.jsp"></put-attribute>
+    </definition>
+
+    <!--searchResult template-->
+    <definition name="searchResult_template" template="/WEB-INF/view/template/searchResult_template.jsp">
+        <put-attribute name="header" value="/WEB-INF/view/template/header.jsp"></put-attribute>
+        <put-attribute name="footer" value="/WEB-INF/view/template/footer.jsp"></put-attribute>
+    </definition>
+
+    <!--我发布的列表-->
+    <definition name="fabric_list" extends="seller_mainTemplate">
+        <put-attribute name="main" value="/WEB-INF/view/fabric/itemList.jsp"></put-attribute>
+        <put-list-attribute name="styles">
+            <add-attribute value="/resources/css/action.css"></add-attribute>
+        </put-list-attribute>
+        <put-list-attribute name="script">
+            <add-attribute value="/resources/js/item/html5shiv.js"></add-attribute>
+            <add-attribute value="/resources/js/item/respond.min.js"></add-attribute>
+            <add-attribute value="/resources/js/buyerCenterPublic.js"></add-attribute>
+            <add-attribute value="/resources/js/item/itemList.js"></add-attribute>
+        </put-list-attribute>
+    </definition>
+
+    <!--fabric detail-->
+    <definition name="fabric_detail" extends="item_view_template">
+        <put-attribute name="detail" value="/WEB-INF/view/fabric/itemDetail.jsp"></put-attribute>
+        <put-attribute name="main" value="/WEB-INF/view/fabric/itemMain.jsp"></put-attribute>
+        <put-list-attribute name="script">
+            <add-attribute value="/resources/js/shoppingCart.js"></add-attribute>
+            <add-attribute value="/resources/js/sampleBook.js"></add-attribute>
+            <add-attribute value="/resources/js/fabric/fabricView.js"></add-attribute>
+            <add-attribute value="/resources/js/buyerCenterPublic.js"></add-attribute>
+            <add-attribute value="/resources/js/shop/favouriteShop.js"></add-attribute>
+        </put-list-attribute>
+    </definition>
+
+    <!--deploy template-->
+    <definition name="deploy_template" template="/WEB-INF/view/template/deployTemplate.jsp">
+        <put-attribute name="header" value="/WEB-INF/view/template/header_sellerCenter.jsp"></put-attribute>
+        <put-attribute name="footer" value="/WEB-INF/view/template/footer.jsp"></put-attribute>
+    </definition>
+
+    <!--发布面料 选择分类-->
+    <definition name="fabric_selectCategory" extends="deploy_template">
+        <put-attribute name="main" value="/WEB-INF/view/fabric/fabricSelectCategory.jsp"></put-attribute>
+        <put-list-attribute name="script">
+            <add-attribute value="/resources/js/fabric/fabricSelectCategory.js"></add-attribute>
+            <add-attribute value="/resources/js/buyerCenterPublic.js"></add-attribute>
+        </put-list-attribute>
+    </definition>
+
+    <!--发布面料 详细-->
+    <definition name="fabric_fillContent" extends="deploy_template">
+        <put-attribute name="main" value="/WEB-INF/view/fabric/fabricFillContent.jsp"></put-attribute>
+        <put-list-attribute name="script">
+            <add-attribute value="/resources/ckeditor.js"></add-attribute>
+            <add-attribute value="/resources/adapters/jquery.js"></add-attribute>
+            <add-attribute value="/resources/js/ajaxfileupload.js"></add-attribute>
+            <add-attribute value="/resources/js/fabric/fabricFillContent.js"></add-attribute>
+            <add-attribute value="/resources/js/colour/colorPlate.js"></add-attribute>
+            <add-attribute value="/resources/js/jquery.fancybox.pack.js"></add-attribute>
+            <add-attribute value="/resources/js/buyerCenterPublic.js"></add-attribute>
+        </put-list-attribute>
+    </definition>
+
+    <!--面料搜索结果列表-->
+    <definition name="fabric_search" extends="viewTemplate">
+        <put-attribute name="main" value="/WEB-INF/view/fabric/searchFabric.jsp"></put-attribute>
+        <put-list-attribute name="styles">
+            <add-attribute value="/resources/css/action.css"></add-attribute>
+        </put-list-attribute>
+        <put-list-attribute name="script">
+            <add-attribute value="/resources/js/buyerCenterPublic.js"></add-attribute>
+            <add-attribute value="/resources/js/fabric/search.js"></add-attribute>
+            <add-attribute value="/resources/js/geo.js"></add-attribute>
+        </put-list-attribute>
+    </definition>
+</tiles-definitions>

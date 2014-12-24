@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
+
+    <on-start>
+        <evaluate expression="materialController.createForm()" result="flowScope.material"></evaluate>
+    </on-start>
+
+    <view-state id="selectCategory" view="material_selectCategory" model="material">
+        <on-render>
+            <evaluate expression="materialController.initFirstCategory()" result="requestScope.categories"></evaluate>
+            <evaluate expression="materialController.findSameLevelCategory(flowScope.material)"
+                      result="requestScope.secondCategory"></evaluate>
+            <evaluate expression="materialController.initUserPref()" result="requestScope.prefs"></evaluate>
+        </on-render>
+        <transition on="next" to="fillContent" validate="true"></transition>
+        <transition on="cancel" to="end" validate="true"></transition>
+    </view-state>
+
+    <view-state id="fillContent" view="material_fillContent" model="material">
+        <on-render>
+            <evaluate expression="materialController.initUnits()" result="requestScope.units"/>
+            <evaluate expression="materialController.initProvideType()" result="requestScope.provideType"></evaluate>
+            <evaluate expression="materialController.initMaterialWidthType()" result="requestScope.widthType"></evaluate>
+            <evaluate expression="materialController.initMaterialScope()" result="requestScope.scope"></evaluate>
+            <evaluate expression="materialController.initMaterialType()" result="requestScope.type"></evaluate>
+        </on-render>
+        <transition on="finish" to="end" validate="true">
+            <evaluate expression="materialController.saveMaterial(flowScope.material)"></evaluate>
+        </transition>
+        <transition on="temporary" to="end" validate="true">
+            <evaluate expression="materialController.tempSaveMaterial(flowScope.material)"></evaluate>
+        </transition>
+        <transition on="previous" to="selectCategory"></transition>
+    </view-state>
+
+    <end-state id="end" view="redirect:/sellerCenter/items"/>
+</flow>

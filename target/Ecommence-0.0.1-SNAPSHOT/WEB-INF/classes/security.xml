@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:security="http://www.springframework.org/schema/security"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/security
+       http://www.springframework.org/schema/security/spring-security.xsd">
+
+    <security:http pattern="/favicon.ico" security="none" />
+
+    <security:http auto-config="true" use-expressions="true">
+        <security:intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')"/>
+        <security:intercept-url pattern="/sellerCenter/fabricCreate" access="hasAnyRole('ROLE_FABRIC')"/>
+        <security:intercept-url pattern="/sellerCenter/materialCreate" access="hasAnyRole('ROLE_MATERIAL')"/>
+        <security:intercept-url pattern="/sellerCenter/**" access="hasAnyRole('ROLE_FABRIC','ROLE_MATERIAL')"/>
+        <security:intercept-url pattern="/buyerCenter/**" access="hasAnyRole('ROLE_FABRIC','ROLE_MATERIAL','ROLE_USER','ROLE_ADMIN')"/>
+        <security:intercept-url pattern="/orderCenter/**" access="hasAnyRole('ROLE_FABRIC','ROLE_USER','ROLE_MATERIAL')"/>
+        <security:intercept-url pattern="/jobLaunch" access="hasAnyRole('ROLE_ADMIN')"/>
+    </security:http>
+
+    <security:authentication-manager>
+        <security:authentication-provider user-service-ref="ecSecurity">
+        </security:authentication-provider>
+    </security:authentication-manager>
+
+    <bean name="ecSecurity" class="com.baosight.scc.ec.security.EcUserDetailsService"></bean>
+</beans>

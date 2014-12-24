@@ -1,0 +1,82 @@
+﻿###############################系统模块链接配置#############################
+#注册	公共模块	卢朝晖
+register = http://10.70.82.33:8080/buap/bcas/wc/register1.jsp
+#首页	登录	公共模块	卢朝晖
+login = http://10.70.82.33:9080/cas
+#首页	注销	公共模块	卢朝晖
+logout = http://10.70.82.33:8080/buap/logout3.jsp
+#我的平台	账号管理-信息维护	公共模块	卢朝晖
+profile = http://10.70.82.33:8080/buap/bcas/wc/infoUpdate.jsp
+#我的平台	账号管理-修改密码	公共模块	卢朝晖
+changePwd = http://10.70.82.33:8080/buap/buaps/safe/changePwd.jsp
+#供应链后台管理
+ecadmin = /admin
+#公共平台后台管理
+buapadmin = http://10.70.82.33:8080/buap/index.jsp
+#首页	品牌-未登录	郭从颖
+brands_unauthenticated = http://10.70.82.32:9080/sccfc/DispatchAction.do?efFormEname=FCUS0202
+#首页	设计师-未登录	郭从颖
+designer_unauthenticated = http://10.70.82.32:9080/sccfc/DispatchAction.do?efFormEname=FCUS0101
+#首页	流行趋势-未登录	郭从颖
+fashion_unauthenticated = http://10.70.82.32:9080/sccfc/DispatchAction.do?efFormEname=FCRP99
+#首页	品牌-已登录	郭从颖
+brands = http://10.70.82.32:9080/sccfc/DispatchAction.do?efFormEname=FCUS0201
+#首页	设计师-已登录	郭从颖
+designer = http://10.70.82.32:9080/sccfc/DispatchAction.do?efFormEname=FCUS0102
+#首页	流行趋势-已登录	郭从颖
+fashion = http://10.70.82.32:9080/sccfc/DispatchAction.do?efFormEname=FCRP97
+#首页	品牌	-未登录	郭从颖
+brandDetail_unauthenticated = http://10.70.82.32:9080/sccfc/DispatchAction.do?efFormEname=FCUS05&serviceName=FCUS0202&methodName=query&brandsId=
+#首页	设计师	-未登录	郭从颖
+designerDetail_unauthenticated = http://10.70.82.32:9080/sccfc/DispatchAction.do?efFormEname=FCUS04&serviceName=FCUS0101&methodName=query&designId=
+#首页	品牌	-已登录	郭从颖
+brandDetail = http://10.70.82.32:9080/sccfc/DispatchAction.do?efFormEname=FCUS0501&serviceName=FCUS0202&methodName=query&brandsId=
+#首页	设计师	-已登录	郭从颖
+designerDetail = http://10.70.82.32:9080/sccfc/DispatchAction.do?efFormEname=FCUS0401&serviceName=FCUS0101&methodName=query&designId=
+#首页	品牌图片获取地址	流行趋势	郭从颖
+designerImg = http://10.70.82.32:9080/sccfc/PO/onlineImage.jsp?filePath=
+#首页	设计体验	参数化设计	钱鹏飞
+#首页	基地介绍
+#首页	联系我们
+#首页	企业应用-参数化设计	参数化设计	钱鹏飞
+cssj = http://cssj.cloudfashion.org/
+#首页	企业应用-企划管理	企划管理	钱鹏飞
+PMDV01 = http://10.70.82.32:9080/sccpm/DispatchAction.do?efFormEname=PMDV00
+#首页	企业应用-网上订货	网上订货会	钱鹏飞
+PMOS01 = http://10.70.82.32:9080/sccpm/DispatchAction.do?efFormEname=PMOS01
+#首页	企业应用-虚拟展台	企划管理	钱鹏飞	　	　	需求调整去掉	　
+xnzt = http://10.70.82.32:9080/underConstruction
+#首页	最新流行趋势-主题	-未登录	郭从颖
+themeStyle_unauthenticated = http://10.70.82.32:9080/sccfc/DispatchAction.do?efFormEname=FCRP99&subreport=01
+#首页	最新流行趋势-色彩	-未登录	郭从颖
+colorStyle_unauthenticated = http://10.70.82.32:9080/sccfc/DispatchAction.do?efFormEname=FCRP99&subreport=02
+#首页	最新流行趋势-男装	-未登录	郭从颖
+maleStyle_unauthenticated = http://10.70.82.32:9080/sccfc/DispatchAction.do?efFormEname=FCRP99&styleName=10
+#首页	最新流行趋势-女装	-未登录	郭从颖
+femaleStyle_unauthenticated = http://10.70.82.32:9080/sccfc/DispatchAction.do?efFormEname=FCRP99&styleName=20
+#首页	最新流行趋势-主题	-已登录	郭从颖
+themeStyle = http://10.70.82.32:9080/sccfc/DispatchAction.do?efFormEname=FCRP97&subreport=01
+#首页	最新流行趋势-色彩	-已登录	郭从颖
+colorStyle = http://10.70.82.32:9080/sccfc/DispatchAction.do?efFormEname=FCRP97&subreport=02
+#首页	最新流行趋势-男装	-已登录	郭从颖
+maleStyle = http://10.70.82.32:9080/sccfc/DispatchAction.do?efFormEname=FCRP97&styleName=10
+#首页	最新流行趋势-女装	-已登录	郭从颖
+femaleStyle = http://10.70.82.32:9080/sccfc/DispatchAction.do?efFormEname=FCRP97&styleName=20
+#首页	时尚设计师栏目	流行趋势	郭从颖
+FCUS0101 = http://10.70.82.32:9080/sccfc/DispatchAction.do?efFormEname=FCUS0101
+#首页	时尚品牌栏目	流行趋势	郭从颖
+FCUS0202 = http://10.70.82.32:9080/sccfc/DispatchAction.do?efFormEname=FCUS0202
+#我的平台	我的报告	流行趋势	郭从颖
+FCRP91 = http://10.70.82.32:9080/sccfc/DispatchAction.do?efFormEname=FCRP91
+#我的平台	报告管理	流行趋势	郭从颖
+FCRP92 = http://10.70.82.32:9080/sccfc/DispatchAction.do?efFormEname=FCRP92
+#我的平台	我的素材	流行趋势	郭从颖
+FCDB01 = http://10.70.82.32:9080/sccfc/DispatchAction.do?efFormEname=FCDB01
+#我的平台	报告制作	流行趋势	郭从颖
+FCRP004 = http://10.70.82.32:9080/sccfc/DispatchAction.do?efFormEname=FCRP004
+#我的平台	设计师信息维护	流行趋势	郭从颖
+FCUS03 = http://10.70.82.32:9080/sccfc/DispatchAction.do?efFormEname=FCUS03
+#我的平台	品牌信息维护	流行趋势	郭从颖
+FCUS001 = http://10.70.82.32:9080/sccfc/DispatchAction.do?efFormEname=FCUS001
+#我的平台	品牌/设计师置顶维护	流行趋势	郭从颖
+FCUS0304 = http://10.70.82.32:9080/sccfc/DispatchAction.do?efFormEname=FCUS0304

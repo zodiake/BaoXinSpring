@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+    <!-- Default Main Template -->
+    <definition name="demandOrder.mainTemplate" template="/WEB-INF/view/template/demandOrder_view_template.jsp">
+        <put-attribute name="header" value="/WEB-INF/view/template/header.jsp"></put-attribute>
+        <put-attribute name="footer" value="/WEB-INF/view/template/footer.jsp"></put-attribute>
+    </definition>
+
+    <!--view jsp-->
+    <definition name="demandOrder.view" extends="demandOrder.mainTemplate">
+        <put-attribute name="main" value="/WEB-INF/view/demandOrder/view.jsp"></put-attribute>
+        <put-list-attribute name="script">
+            <add-attribute value="/resources/js/demandOrder/demandOrderView.js"></add-attribute>
+            <add-attribute value="/resources/js/buyerCenterPublic.js"></add-attribute>
+        </put-list-attribute>
+    </definition>
+
+    <!--demandOrder detail edit page-->
+    <definition name="demandOrder.edit" template="/WEB-INF/view/template/demandOrder_create_template.jsp">
+        <put-attribute name="header" value="/WEB-INF/view/template/header_buyerCenter.jsp"></put-attribute>
+        <put-attribute name="footer" value="/WEB-INF/view/template/footer.jsp"></put-attribute>
+        <put-attribute name="main" value="/WEB-INF/view/demandOrder/create.jsp"></put-attribute>
+        <put-list-attribute name="script">
+            <add-attribute value="/resources/adapters/jquery.js"></add-attribute>
+            <add-attribute value="/resources/js/colour/jquery-ui.js"></add-attribute>
+            <add-attribute value="/resources/js/colour/jquery-ui-1.10.3.custom.min.js"></add-attribute>
+            <add-attribute value="/resources/js/ajaxfileupload.js"></add-attribute>
+            <add-attribute value="/resources/js/demandOrder/demandOrder_create.js"></add-attribute>
+            <add-attribute value="/resources/js/buyerCenterPublic.js"></add-attribute>
+        </put-list-attribute>
+    </definition>
+    <!--demandOrder use~s list-->
+    <definition name="demandOrder.releasedList" extends="buyer_mainTemplate">
+        <put-attribute name="main" value="/WEB-INF/view/demandOrder/list.jsp"></put-attribute>
+        <put-list-attribute name="styles">
+            <add-attribute value="/resources/css/action.css"></add-attribute>
+        </put-list-attribute>
+        <put-list-attribute name="script">
+            <add-attribute value="/resources/js/demandOrder/demandOrder.js"></add-attribute>
+            <add-attribute value="/resources/js/buyerCenterPublic.js"></add-attribute>
+        </put-list-attribute>
+    </definition>
+
+    <!--综合求购template -->
+    <definition name="demandOrder_zh" template="/WEB-INF/view/template/template_demandOrder_zonghe.jsp">
+        <put-attribute name="header" value="/WEB-INF/view/template/header.jsp"></put-attribute>
+        <put-attribute name="footer" value="/WEB-INF/view/template/footer.jsp"></put-attribute>
+    </definition>
+    <!-- 综合求购­ -->
+    <definition name="demandList" extends="demandOrder_zh">
+        <put-attribute name="home" value="/WEB-INF/view/demandOrder/demandHome.jsp"></put-attribute>
+        <put-attribute name="newItem" value="/WEB-INF/view/demandOrder/newItem.jsp"></put-attribute>
+        <put-attribute name="main" value="/WEB-INF/view/demandOrder/demandMain.jsp"></put-attribute>
+        <put-attribute name="providers" value="/WEB-INF/view/demandOrder/providers.jsp"></put-attribute>
+        <put-list-attribute name="script">
+            <add-attribute value="/resources/js/demandOrder/demandOrderList.js"></add-attribute>
+            <add-attribute value="/resources/js/buyerCenterPublic.js"></add-attribute>
+        </put-list-attribute>
+    </definition>
+
+</tiles-definitions>

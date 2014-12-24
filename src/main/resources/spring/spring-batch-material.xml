@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:batch="http://www.springframework.org/schema/batch"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/batch
+       http://www.springframework.org/schema/batch/spring-batch.xsd">
+
+    <!--material reader-->
+    <bean id="materialReader" class="org.springframework.batch.item.file.FlatFileItemReader" scope="step">
+        <property name="resource" value="#{jobParameters['file']}"></property>
+        <property name="linesToSkip" value="1"></property>
+        <property name="recordSeparatorPolicy">
+            <bean class="org.springframework.batch.item.file.separator.SimpleRecordSeparatorPolicy"></bean>
+        </property>
+        <property name="lineMapper" ref="materialLineMapper"></property>
+    </bean>
+
+    <!--material reader lineMapper-->
+    <bean id="materialLineMapper" class="org.springframework.batch.item.file.mapping.DefaultLineMapper">
+        <property name="fieldSetMapper" ref="materialFieldSetMapper"></property>
+        <property name="lineTokenizer" ref="materialLineTokenizer"></property>
+    </bean>
+
+    <bean id="materialLineTokenizer" class="org.springframework.batch.item.file.transform.DelimitedLineTokenizer">
+        <property name="delimiter" value=","></property>
+        <property name="names" value="rowNumber,firstCategory,secondCategory,name,type,size,scope,customId,provideType,unit,
+        firstQuantity,firstPrice,secondQuantity,secondPrice,thirdQuantity,thirdPrice,total,shipInterval,content,validDateFrom,
+        validDateTo,images,createdBy"></property> </bean>
+
+    <bean id="materialFieldSetMapper" class="org.springframework.batch.item.file.mapping.BeanWrapperFieldSetMapper">
+        <property name="prototypeBeanName" value="BatchMaterial"></property>
+    </bean>
+
+    <bean id="BatchMaterial" class="com.baosight.scc.ec.batch.BatchMaterial" scope="prototype"></bean>
+
+    <bean id="materialSkipListener" class="com.baosight.scc.ec.batch.MaterialDatabaseSkipListener">
+        <property name="template" ref="jdbcTemplate"></property>
+    </bean>
+
+    <bean id="MaterialDTO" class="com.baosight.scc.ec.batch.MaterialDTO"></bean>
+
+    <bean id="materialProcess" class="com.baosight.scc.ec.batch.MaterialProcess"></bean>
+
+    <bean id="materialCompositeProcessor" class="org.springframework.batch.item.support.CompositeItemProcessor">
+        <property name="delegates">
+            <list>
+                <ref bean="materialProcess"></ref>
+                <ref bean="materialValidate"></ref>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="materialValidateBean" class="com.baosight.scc.ec.batch.MaterialValidator"></bean>
+
+    <bean id="materialValidate" class="org.springframework.batch.item.validator.ValidatingItemProcessor">
+        <property name="validator" ref="materialValidateBean"></property>
+    </bean>
+
+    <bean id="materialWriter" class="com.baosight.scc.ec.batch.MaterialWriter">
+        <property name="entityManagerFactory" ref="emf"></property>
+        <property name="repository" ref="materialSearchRepository"></property>
+        <property name="service" ref="materialIndexServiceImpl"></property>
+    </bean>
+
+    <!--material job-->
+    <batch:job id="materialBatchJob">
+        <batch:step id="materialStepOne">
+            <batch:tasklet transaction-manager="transactionManager">
+                <batch:chunk reader="materialReader" processor="materialCompositeProcessor" writer="materialWriter" commit-interval="200"
+                             skip-limit="1">
+                    <batch:skippable-exception-classes>
+                        <batch:include class="org.springframework.batch.item.validator.ValidationException"/>
+                    </batch:skippable-exception-classes>
+                </batch:chunk>
+                <batch:listeners>
+                    <batch:listener ref="materialSkipListener"></batch:listener>
+                </batch:listeners>
+            </batch:tasklet>
+        </batch:step>
+    </batch:job>
+</beans>

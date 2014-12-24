@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<elastic>
+
+    <clusterName>
+        baosightEs
+    </clusterName>
+
+    <indexName>
+        sccindex
+    </indexName>
+
+    <serverAddress>
+        10.80.8.41
+        10.80.8.42
+        10.80.8.43
+    </serverAddress>
+
+    <highlightTag>
+        bdo class="orange",em
+    </highlightTag>
+
+
+</elastic>

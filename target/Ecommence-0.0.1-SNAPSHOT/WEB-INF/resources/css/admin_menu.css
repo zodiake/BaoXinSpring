@@ -1,0 +1,50 @@
+@charset "utf-8";
+
+@import url('normalize.css');
+@import url('../plugin/datepicker/jquery-ui.custom.min.css');
+@import url('library.css');
+
+/* !!
+ * sidebar - selected
+ * ** *** **** *** ** *
+ */
+.sidebar .commodity-list span > a .selected{
+    padding-left:20px;
+}
+.sidebar .commodity-list li .selected{
+    position:relative;
+    border-width:1px 0;
+    border-style:solid;
+    border-color:transparent;
+}
+.sidebar .commodity-list li > a .selected{
+    padding:4px 8px 4px 28px;
+    display:block;
+    z-index:5;
+    position:relative;
+}
+.sidebar .commodity-list li > div .selected{
+    width:360px;
+    padding:10px 10px 0;
+    margin:-1px 0 0 -1px;
+    left:100%; top:0; z-index:1;
+    position:absolute;
+    display:none;
+    border:1px solid #ddd;
+    background:#fdfdfd;
+}
+.sidebar .commodity-list li > div a .selected{
+    margin:0 10px 10px 0;
+    display:inline-block;
+    *display:inline; *zoom:1;
+}
+.sidebar .commodity-list li .selected{
+    border-color:#ddd;
+    background:#fdfdfd;
+}
+.sidebar .commodity-list li a .selected{
+    background:#fdfdfd;
+}
+.sidebar .commodity-list li div .selected{
+    display:block;
+}

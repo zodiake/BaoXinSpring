@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+    <!-- 调样册提交-->
+    <definition name="sampleTemplate" template="/WEB-INF/view/template/publicCenterMain.jsp">
+        <put-attribute name="header" value="/WEB-INF/view/template/header_buyerCenter.jsp"></put-attribute>
+        <put-attribute name="footer" value="/WEB-INF/view/template/footer.jsp"></put-attribute>
+    </definition>
+    <definition name="sellerViewSampleTemplate" template="/WEB-INF/view/template/publicCenterMain.jsp">
+        <put-attribute name="header" value="/WEB-INF/view/template/header_sellerCenter.jsp"></put-attribute>
+        <put-attribute name="footer" value="/WEB-INF/view/template/footer.jsp"></put-attribute>
+    </definition>
+
+    <!--调样册查看页面-->
+    <definition name="order_sampleBook" extends="viewTemplate">
+        <put-attribute name="main" value="/WEB-INF/view/sampleOrder/sampleBook.jsp"></put-attribute>
+        <put-list-attribute name="styles">
+            <add-attribute value="/resources/css/action.css"></add-attribute>
+        </put-list-attribute>
+        <put-list-attribute name="script">
+            <add-attribute value="/resources/js/sampleBook.js"></add-attribute>
+            <add-attribute value="/resources/js/buyerCenterPublic.js"></add-attribute>
+        </put-list-attribute>
+    </definition>
+
+    <!--调样提交页面-->
+    <definition name="submit_sampleBook" extends="orderTemplate">
+        <put-attribute name="main" value="/WEB-INF/view/sampleOrder/sampleOrderCheck.jsp"></put-attribute>
+        <put-list-attribute name="styles">
+            <add-attribute value="/resources/css/action.css"></add-attribute>
+        </put-list-attribute>
+        <put-list-attribute name="script">
+            <add-attribute value="/resources/js/colour/jquery-ui.js"></add-attribute>
+            <add-attribute value="/resources/js/colour/jquery-ui-1.10.3.custom.min.js"></add-attribute>
+            <add-attribute value="/resources/js/sampleBook.js"></add-attribute>
+            <add-attribute value="/resources/js/buyerCenterPublic.js"></add-attribute>
+            <add-attribute value="/resources/js/geo.js"></add-attribute>
+            <add-attribute value="/resources/js/user/address.js"></add-attribute>
+        </put-list-attribute>
+    </definition>
+
+    <!--买家发出的调样单列表-->
+    <definition name="sampleOrder_buyer_list" extends="buyer_mainTemplate">
+        <put-attribute name="main" value="/WEB-INF/view/sampleOrder/sampleOrder_buyer_list.jsp"></put-attribute>
+        <put-list-attribute name="styles">
+            <add-attribute value="/resources/css/action.css"></add-attribute>
+        </put-list-attribute>
+        <put-list-attribute name="script">
+            <add-attribute value="/resources/js/sampleBook.js"></add-attribute>
+            <add-attribute value="/resources/js/buyerCenterPublic.js"></add-attribute>
+        </put-list-attribute>
+    </definition>
+
+    <!--sample order view-->
+    <definition name="sampleOrder_buyerView" extends="orderTemplate">
+        <put-attribute name="main" value="/WEB-INF/view/sampleOrder/buyerView.jsp"></put-attribute>
+        <put-list-attribute name="styles">
+            <add-attribute value="/resources/css/action.css"></add-attribute>
+        </put-list-attribute>
+        <put-list-attribute name="script">
+            <add-attribute value="/resources/js/buyerCenterPublic.js"></add-attribute>
+        </put-list-attribute>
+    </definition>
+
+    <!--sample order view-->
+    <definition name="sampleOrder_sellerView" extends="sellerViewOrderTemplate">
+        <put-attribute name="main" value="/WEB-INF/view/sampleOrder/sellerView.jsp"></put-attribute>
+        <put-list-attribute name="styles">
+            <add-attribute value="/resources/css/action.css"></add-attribute>
+        </put-list-attribute>
+        <put-list-attribute name="script">
+            <add-attribute value="/resources/js/buyerCenterPublic.js"></add-attribute>
+        </put-list-attribute>
+    </definition>
+
+    <!--卖家收到的调样单列表-->
+    <definition name="sampleOrder_seller_list" extends="seller_mainTemplate">
+        <put-attribute name="main" value="/WEB-INF/view/sampleOrder/sampleOrder_seller_list.jsp"></put-attribute>
+        <put-list-attribute name="styles">
+            <add-attribute value="/resources/css/action.css"></add-attribute>
+        </put-list-attribute>
+        <put-list-attribute name="script">
+            <add-attribute value="/resources/js/sampleBook.js"></add-attribute>
+            <add-attribute value="/resources/js/buyerCenterPublic.js"></add-attribute>
+        </put-list-attribute>
+    </definition>
+
+    <!--订单提交成功页面-->
+    <definition name="order_sampleOrderSubmitSuccess" extends="orderTemplate">
+        <put-attribute name="main" value="/WEB-INF/view/sampleOrder/orderSubmitSuccess.jsp"></put-attribute>
+        <put-list-attribute name="styles">
+            <add-attribute value="/resources/css/action.css"></add-attribute>
+            <add-attribute value="/resources/css/begbuy.css"></add-attribute>
+            <add-attribute value="/resources/css/base.css"></add-attribute>
+        </put-list-attribute>
+        <put-list-attribute name="script">
+            <add-attribute value="/resources/js/buyerCenterPublic.js"></add-attribute>
+        </put-list-attribute>
+    </definition>
+    <!--订单提交失败页面-->
+    <definition name="order_sampleOrderSubmitFail" extends="orderTemplate">
+        <put-attribute name="main" value="/WEB-INF/view/sampleOrder/orderSubmitFail.jsp"></put-attribute>
+        <put-list-attribute name="styles">
+            <add-attribute value="/resources/css/action.css"></add-attribute>
+            <add-attribute value="/resources/css/begbuy.css"></add-attribute>
+            <add-attribute value="/resources/css/base.css"></add-attribute>
+        </put-list-attribute>
+        <put-list-attribute name="script"></put-list-attribute>
+    </definition>
+</tiles-definitions>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+    <!--订单地址新增-->
+    <definition name="address_manage" extends="buyer_mainTemplate">
+        <put-attribute name="main" value="/WEB-INF/view/address/addressManage.jsp"></put-attribute>
+        <put-list-attribute name="styles">
+        <add-attribute value="/resources/css/base.css"></add-attribute>
+        <add-attribute value="/resources/css/begbuy.css"></add-attribute>
+    </put-list-attribute>
+        <put-list-attribute name="script">
+            <add-attribute value="/resources/js/user/address.js"></add-attribute>
+            <add-attribute value="/resources/js/buyerCenterPublic.js"></add-attribute>
+            <add-attribute value="/resources/js/geo.js"></add-attribute>
+        </put-list-attribute>
+    </definition>
+    <!--订单地址编辑-->
+    <definition name="address_edit" extends="buyer_mainTemplate">
+        <put-attribute name="main" value="/WEB-INF/view/address/addressEdit.jsp"></put-attribute>
+        <put-list-attribute name="styles">
+        <add-attribute value="/resources/css/base.css"></add-attribute>
+        <add-attribute value="/resources/css/begbuy.css"></add-attribute>
+    </put-list-attribute>
+        <put-list-attribute name="script">
+            <add-attribute value="/resources/js/user/address.js"></add-attribute>
+            <add-attribute value="/resources/js/buyerCenterPublic.js"></add-attribute>
+            <add-attribute value="/resources/js/geo.js"></add-attribute>
+        </put-list-attribute>
+    </definition>
+</tiles-definitions>

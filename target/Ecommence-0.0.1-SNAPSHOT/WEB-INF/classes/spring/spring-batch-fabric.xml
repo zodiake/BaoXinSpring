@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:batch="http://www.springframework.org/schema/batch"
+       xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/batch http://www.springframework.org/schema/batch/spring-batch.xsd http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc.xsd">
+
+    <!--fabric reader-->
+    <bean id="reader" class="org.springframework.batch.item.file.FlatFileItemReader" scope="step">
+        <property name="resource" value="#{jobParameters['file']}"></property>
+        <property name="linesToSkip" value="1"></property>
+        <property name="recordSeparatorPolicy">
+            <bean class="org.springframework.batch.item.file.separator.SimpleRecordSeparatorPolicy"></bean>
+        </property>
+        <property name="lineMapper" ref="lineMapper"></property>
+    </bean>
+
+    <!--fabric reader lineMapper-->
+    <bean id="lineMapper" class="org.springframework.batch.item.file.mapping.DefaultLineMapper">
+        <property name="fieldSetMapper" ref="fieldSetMapper"></property>
+        <property name="lineTokenizer" ref="lineTokenizer"></property>
+    </bean>
+
+    <!--fabric reader LineTokenizer-->
+    <bean id="lineTokenizer" class="org.springframework.batch.item.file.transform.DelimitedLineTokenizer">
+        <property name="delimiter" value=","></property>
+        <property name="names" value="rowNumber,firstCategory,secondCategory,firstSource,secondSource,mainUse,name,season,
+        source,shazhi,midu,width,height,firstTechnology,secondTechnology,firstPatternFirstCategory,firstPatternSecondCategory,
+        secondPatternFirstCategory,secondPatternSecondCategory,productNumber,color,provideType,unit,
+        firstQuantity,firstPrice,secondQuantity,secondPrice,thirdQuantity,thirdPrice,sum,shipInterval,desc,startValidDate,endValidDate,images,createdBy"></property>
+    </bean>
+
+    <!--fabric Mapper-->
+    <bean id="fieldSetMapper" class="org.springframework.batch.item.file.mapping.BeanWrapperFieldSetMapper">
+        <property name="prototypeBeanName" value="product"></property>
+    </bean>
+
+    <bean id="product" class="com.baosight.scc.ec.batch.BatchProduct" scope="prototype"></bean>
+
+    <!--fabric process-->
+    <bean id="processor" class="org.springframework.batch.item.support.CompositeItemProcessor">
+        <property name="delegates">
+            <list>
+                <ref bean="productMapperBean"></ref>
+                <ref bean="validate"></ref>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="dto" class="com.baosight.scc.ec.batch.FabricDTO"></bean>
+
+    <bean id="productMapperBean" class="com.baosight.scc.ec.batch.Process">
+    </bean>
+
+    <bean id="productValidateBean" class="com.baosight.scc.ec.batch.ProductValidator"></bean>
+
+    <bean id="validate" class="org.springframework.batch.item.validator.ValidatingItemProcessor">
+        <property name="validator" ref="productValidateBean"></property>
+    </bean>
+
+    <!--fabric writer-->
+    <bean id="writer" class="com.baosight.scc.ec.batch.FabricWriter">
+        <property name="entityManagerFactory" ref="emf"></property>
+        <property name="fabricSearchRepository" ref="fabricSearchRepository"></property>
+        <property name="fabricIndexService" ref="fabricIndexServiceImpl"></property>
+    </bean>
+
+    <bean id="skipListener" class="com.baosight.scc.ec.batch.DatabaseSkipListener">
+        <property name="template" ref="jdbcTemplate"></property>
+    </bean>
+
+    <!--fabric job-->
+    <batch:job id="fabricBatchJob">
+        <batch:step id="fabricStepOne">
+            <batch:tasklet transaction-manager="transactionManager">
+                <batch:chunk reader="reader" processor="processor" writer="writer" commit-interval="200"
+                             skip-limit="1">
+                    <batch:skippable-exception-classes>
+                        <batch:include class="org.springframework.batch.item.validator.ValidationException"/>
+                    </batch:skippable-exception-classes>
+                </batch:chunk>
+                <batch:listeners>
+                    <batch:listener ref="skipListener"></batch:listener>
+                </batch:listeners>
+            </batch:tasklet>
+        </batch:step>
+    </batch:job>
+</beans>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+    <!-- Default Main Template -->
+    <definition name="comment_edit_Template" template="/WEB-INF/view/template/comment_edit.jsp">
+        <put-attribute name="footer" value="/WEB-INF/view/template/footer.jsp"></put-attribute>
+    </definition>
+
+
+    <!-- 买家评价编辑 -->
+    <definition name="comment_buyer_edit" extends="comment_edit_Template">
+        <put-attribute name="header" value="/WEB-INF/view/template/header_buyerCenter.jsp"></put-attribute>
+        <put-attribute name="main" value="/WEB-INF/view/comment/buyer_edit.jsp"></put-attribute>
+        <put-list-attribute name="script">
+            <add-attribute value="/resources/js/comment/comment.js"></add-attribute>
+            <add-attribute value="/resources/js/buyerCenterPublic.js"></add-attribute>
+        </put-list-attribute>
+    </definition>
+
+    <!-- 卖家评价编辑 -->
+    <definition name="seller_comment_edit" extends="comment_edit_Template">
+        <put-attribute name="header" value="/WEB-INF/view/template/header_sellerCenter.jsp"></put-attribute>
+        <put-attribute name="main" value="/WEB-INF/view/comment/seller_edit.jsp"></put-attribute>
+        <put-list-attribute name="script">
+            <add-attribute value="/resources/js/comment/comment.js"></add-attribute>
+            <add-attribute value="/resources/js/buyerCenterPublic.js"></add-attribute>
+        </put-list-attribute>
+    </definition>
+
+    <definition name="buyer_comment_ok" extends="comment_edit_Template">
+        <put-attribute name="header" value="/WEB-INF/view/template/header_buyerCenter.jsp"></put-attribute>
+        <put-attribute name="main" value="/WEB-INF/view/comment/commentOk.jsp"></put-attribute>
+        <put-list-attribute name="script">
+            <add-attribute value="/resources/js/buyerCenterPublic.js"></add-attribute>
+        </put-list-attribute>
+    </definition>
+
+    <definition name="seller_comment_ok" extends="comment_edit_Template">
+        <put-attribute name="header" value="/WEB-INF/view/template/header_sellerCenter.jsp"></put-attribute>
+        <put-attribute name="main" value="/WEB-INF/view/comment/commentOk.jsp"></put-attribute>
+        <put-list-attribute name="script">
+            <add-attribute value="/resources/js/buyerCenterPublic.js"></add-attribute>
+        </put-list-attribute>
+    </definition>
+
+</tiles-definitions>

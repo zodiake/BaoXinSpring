@@ -1,0 +1,99 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+body {
+	font-family: Verdana;
+	font-size: 12px;
+	margin: 0;
+}/*修改过*/
+a:link {
+	text-decoration: none;
+	color: #666;
+	outline: none;
+}
+a:visited {
+	text-decoration: none;
+	color: #666;
+	outline: none;
+}
+a:hover {
+	text-decoration: none;
+	color: #0099FF;
+	outline: none;
+}
+a:active {
+	text-decoration: none;
+	color: #0099FF;
+	outline: none;
+}
+.home-main {
+	width: 1003px;
+	margin: auto;
+	background-color: #FFF;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.error_page {
+	width: 500px;
+	height: 200px;
+	background-color: #fffbed;
+	border: 1px solid #fae297;
+	margin: auto;
+}
+.line_box {
+	margin-top: 40px;
+}
+.line_box .error_page table {
+	margin: auto;
+	margin-top: 20px;
+}
+.error_page h1 {
+	font-family: "微软雅黑";
+	font-size: 22px;
+	font-weight: bold;
+	padding-bottom: 18px;
+	color: #000;
+}
+.error_tit {
+	color: #000;
+	font-size: 14px;
+	border-bottom: 1px solid #CCCCCC;
+	line-height: 35px;
+	height: 35px;
+	font-weight: bold;
+}
+.error_page table tr td ul {
+	margin: 0px;
+	list-style-type: none;
+	padding-top: 10px;
+}
+.error_page table tr td ul li {
+	line-height: 22px;
+	height: 22px;
+}
+.line_box .error_page .error_link {
+	color: #36C;
+}
+.line_box .error_page .error_link:hover {
+	color: #F60;
+}
+.caution_page {
+	width: 500px;
+	height: 200px;
+	background-color: #fffbed;
+	border: 1px solid #fae297;
+	margin: auto;
+}
+.caution_page table {
+	margin: auto;
+	margin-top: 80px;
+}
+.caution_page table tr td h2 {
+	color: #f7991f;
+	font-family: "微软雅黑";
+	font-size: 22px;
+	font-weight: bold;
+	padding-left:10px;
+	
+}

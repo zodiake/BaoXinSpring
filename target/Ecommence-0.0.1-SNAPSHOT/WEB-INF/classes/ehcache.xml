@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache>
+     <diskStore path="C:/mycache"/>
+        <!--<diskStore path="/share/attachment/EC/cache"/>-->
+
+        <cache name="com.baosight.scc.ec.model.MaterialCategory"
+               maxElementsInMemory="500"
+               eternal="true"
+               timeToIdleSeconds="0"
+               timeToLiveSeconds="0"
+               overflowToDisk="false"
+                />
+        <cache name="com.baosight.scc.ec.model.Advertisement"
+               maxElementsInMemory="500"
+               eternal="true"
+               timeToIdleSeconds="0"
+               timeToLiveSeconds="0"
+               overflowToDisk="false"
+                />
+        <defaultCache
+                maxElementsInMemory="10000"
+                eternal="false"
+                timeToIdleSeconds="120"
+                timeToLiveSeconds="120"
+                overflowToDisk="true"
+                maxElementsOnDisk="10000000"
+                diskPersistent="false"
+                diskExpiryThreadIntervalSeconds="120"
+                memoryStoreEvictionPolicy="LRU"
+                />
+        <cache name="season" eternal="false"
+               maxElementsInMemory="20" overflowToDisk="false" diskPersistent="false"
+               timeToIdleSeconds="120" timeToLiveSeconds="3600"
+               memoryStoreEvictionPolicy="LRU"/>
+
+        <cache name="fabricWidthType" eternal="false"
+               maxElementsInMemory="20" overflowToDisk="false" diskPersistent="false"
+               timeToIdleSeconds="120" timeToLiveSeconds="3600"
+               memoryStoreEvictionPolicy="LRU"/>
+
+        <cache name="fabricTechnology" eternal="false"
+               maxElementsInMemory="20" overflowToDisk="false" diskPersistent="false"
+               timeToIdleSeconds="120" timeToLiveSeconds="3600"
+               memoryStoreEvictionPolicy="LRU"/>
+
+        <cache name="technologyType" eternal="false"
+               maxElementsInMemory="20" overflowToDisk="false" diskPersistent="false"
+               timeToIdleSeconds="120" timeToLiveSeconds="3600"
+               memoryStoreEvictionPolicy="LRU"/>
+
+        <cache name="unit" eternal="false"
+               maxElementsInMemory="20" overflowToDisk="false" diskPersistent="false"
+               timeToIdleSeconds="120" timeToLiveSeconds="3600"
+               memoryStoreEvictionPolicy="LRU"/>
+
+        <cache name="provideType" eternal="false"
+               maxElementsInMemory="20" overflowToDisk="false" diskPersistent="false"
+               timeToIdleSeconds="120" timeToLiveSeconds="3600"
+               memoryStoreEvictionPolicy="LRU"/>
+
+        <cache name="ecPattern" eternal="false"
+               maxElementsInMemory="20" overflowToDisk="false" diskPersistent="false"
+               timeToIdleSeconds="120" timeToLiveSeconds="3600"
+               memoryStoreEvictionPolicy="LRU"/>
+
+        <cache name="materialUnit" eternal="false"
+               maxElementsInMemory="20" overflowToDisk="false" diskPersistent="false"
+               timeToIdleSeconds="120" timeToLiveSeconds="3600"
+               memoryStoreEvictionPolicy="LRU"/>
+
+        <cache name="materialProvideType" eternal="false"
+               maxElementsInMemory="20" overflowToDisk="false" diskPersistent="false"
+               timeToIdleSeconds="120" timeToLiveSeconds="3600"
+               memoryStoreEvictionPolicy="LRU"/>
+
+        <cache name="materialWidthType" eternal="false"
+               maxElementsInMemory="20" overflowToDisk="false" diskPersistent="false"
+               timeToIdleSeconds="120" timeToLiveSeconds="3600"
+               memoryStoreEvictionPolicy="LRU"/>
+
+        <cache name="materialScope" eternal="false"
+               maxElementsInMemory="20" overflowToDisk="false" diskPersistent="false"
+               timeToIdleSeconds="120" timeToLiveSeconds="3600"
+               memoryStoreEvictionPolicy="LRU"/>
+
+        <cache name="ecMaterialType" eternal="false"
+               maxElementsInMemory="20" overflowToDisk="false" diskPersistent="false"
+               timeToIdleSeconds="120" timeToLiveSeconds="3600"
+               memoryStoreEvictionPolicy="LRU"/>
+
+        <cache name="fabricParentFirstCategory" eternal="false"
+               maxElementsInMemory="20" overflowToDisk="false" diskPersistent="false"
+               timeToIdleSeconds="120" timeToLiveSeconds="3600"
+               memoryStoreEvictionPolicy="LRU"/>
+
+        <cache name="fabricMainUseType" eternal="false"
+               maxElementsInMemory="20" overflowToDisk="false" diskPersistent="false"
+               timeToIdleSeconds="120" timeToLiveSeconds="3600"
+               memoryStoreEvictionPolicy="LRU"/>
+
+        <cache name="materialFirstCategory" eternal="false"
+               maxElementsInMemory="20" overflowToDisk="false" diskPersistent="false"
+               timeToIdleSeconds="120" timeToLiveSeconds="3600"
+               memoryStoreEvictionPolicy="LRU"/>
+        <cache name="ecColor" eternal="false"
+               maxElementsInMemory="20" overflowToDisk="false" diskPersistent="false"
+               timeToIdleSeconds="120" timeToLiveSeconds="3600"
+               memoryStoreEvictionPolicy="LRU"/>
+        <cache name="pattern-firstCategory" eternal="false"
+               maxElementsInMemory="20" overflowToDisk="false" diskPersistent="false"
+               timeToIdleSeconds="1800" timeToLiveSeconds="3600"
+               memoryStoreEvictionPolicy="LRU"/>
+        <cache name="color-hierarchy" eternal="false"
+               maxElementsInMemory="20" overflowToDisk="false" diskPersistent="false"
+               timeToIdleSeconds="1800" timeToLiveSeconds="3600"
+               memoryStoreEvictionPolicy="LRU"/>
+        <cache name="fabricSource-firstCategory" eternal="false"
+               maxElementsInMemory="20" overflowToDisk="false" diskPersistent="false"
+               timeToIdleSeconds="1800" timeToLiveSeconds="3600"
+               memoryStoreEvictionPolicy="LRU"/>
+        <cache name="fabric-technologyType" eternal="false"
+               maxElementsInMemory="20" overflowToDisk="false" diskPersistent="false"
+               timeToIdleSeconds="1800" timeToLiveSeconds="3600"
+               memoryStoreEvictionPolicy="LRU"/>
+        <cache name="materialCategory" eternal="false"
+               maxElementsInMemory="20" overflowToDisk="false" diskPersistent="false"
+               timeToIdleSeconds="1800" timeToLiveSeconds="3600"
+               memoryStoreEvictionPolicy="LRU"/>
+        <cache name="material-secondCategory" eternal="false"
+               maxElementsInMemory="20" overflowToDisk="false" diskPersistent="false"
+               timeToIdleSeconds="1800" timeToLiveSeconds="3600"
+               memoryStoreEvictionPolicy="LRU"/>
+        <cache name="f-controller-technology" eternal="false"
+               maxElementsInMemory="20" overflowToDisk="false" diskPersistent="false"
+               timeToIdleSeconds="1800" timeToLiveSeconds="3600"
+               memoryStoreEvictionPolicy="LRU"/>
+        <cache name="f-controller-second-technology" eternal="false"
+               maxElementsInMemory="20" overflowToDisk="false" diskPersistent="false"
+               timeToIdleSeconds="1800" timeToLiveSeconds="3600"
+               memoryStoreEvictionPolicy="LRU"/>
+        <cache name="f-controller-unit" eternal="false"
+               maxElementsInMemory="20" overflowToDisk="false" diskPersistent="false"
+               timeToIdleSeconds="1800" timeToLiveSeconds="3600"
+               memoryStoreEvictionPolicy="LRU"/>
+        <cache name="f-controller-pattern" eternal="false"
+               maxElementsInMemory="20" overflowToDisk="false" diskPersistent="false"
+               timeToIdleSeconds="120" timeToLiveSeconds="3600"
+               memoryStoreEvictionPolicy="LRU"/>
+        <cache name="fabric-firstCategory" eternal="false"
+               maxElementsInMemory="20" overflowToDisk="false" diskPersistent="false"
+               timeToIdleSeconds="120" timeToLiveSeconds="3600"
+               memoryStoreEvictionPolicy="LRU"/>
+        <cache name="material-firstCategory" eternal="false"
+               maxElementsInMemory="20" overflowToDisk="false" diskPersistent="false"
+               timeToIdleSeconds="120" timeToLiveSeconds="3600"
+               memoryStoreEvictionPolicy="LRU"/>
+        <cache name="f-controller-season" eternal="false"
+               maxElementsInMemory="20" overflowToDisk="false" diskPersistent="false"
+               timeToIdleSeconds="120" timeToLiveSeconds="3600"
+               memoryStoreEvictionPolicy="LRU"/>
+        <cache name="materialCategory-rmi" eternal="false"
+               maxElementsInMemory="20" overflowToDisk="false" diskPersistent="false"
+               timeToIdleSeconds="120" timeToLiveSeconds="3600"
+               memoryStoreEvictionPolicy="LRU"/>
+        <cache name="fabricCategory-rmi" eternal="false"
+               maxElementsInMemory="20" overflowToDisk="false" diskPersistent="false"
+               timeToIdleSeconds="120" timeToLiveSeconds="3600"
+               memoryStoreEvictionPolicy="LRU"/>
+        <!--首页缓存数据 start-->
+    <cache name="homeDemandCacheLoadService" eternal="false"
+           maxElementsInMemory="30" overflowToDisk="false" diskPersistent="false"
+           timeToIdleSeconds="120" timeToLiveSeconds="3600"
+           memoryStoreEvictionPolicy="LRU"/>
+    <cache name="homeFabricCacheLoadService" eternal="false"
+           maxElementsInMemory="30" overflowToDisk="false" diskPersistent="false"
+           timeToIdleSeconds="120" timeToLiveSeconds="3600"
+           memoryStoreEvictionPolicy="LRU"/>
+    <cache name="homeMaterialCacheLoadService" eternal="false"
+           maxElementsInMemory="30" overflowToDisk="false" diskPersistent="false"
+           timeToIdleSeconds="120" timeToLiveSeconds="3600"
+           memoryStoreEvictionPolicy="LRU"/>
+    <cache name="homeBrandCacheLoadService" eternal="false"
+           maxElementsInMemory="30" overflowToDisk="false" diskPersistent="false"
+           timeToIdleSeconds="120" timeToLiveSeconds="3600"
+           memoryStoreEvictionPolicy="LRU"/>
+    <cache name="homeDesignerCacheLoadService" eternal="false"
+           maxElementsInMemory="30" overflowToDisk="false" diskPersistent="false"
+           timeToIdleSeconds="120" timeToLiveSeconds="3600"
+           memoryStoreEvictionPolicy="LRU"/>
+    <cache name="statisticsCacheLoadService" eternal="false"
+           maxElementsInMemory="30" overflowToDisk="false" diskPersistent="false"
+           timeToIdleSeconds="1200" timeToLiveSeconds="21600"
+           memoryStoreEvictionPolicy="LRU"/>
+    <!--首页缓存数据 end-->
+    <cache name="demandStatisticsCacheLoadService" eternal="false"
+           maxElementsInMemory="30" overflowToDisk="false" diskPersistent="false"
+           timeToIdleSeconds="1200" timeToLiveSeconds="21600"
+           memoryStoreEvictionPolicy="LRU"/>
+    <cache name="fabricController-fabricMainUseType" eternal="false"
+           maxElementsInMemory="30" overflowToDisk="false" diskPersistent="false"
+           timeToIdleSeconds="1200" timeToLiveSeconds="21600"
+           memoryStoreEvictionPolicy="LRU"/>
+    <cache name="fabricController-fabricsource" eternal="false"
+           maxElementsInMemory="30" overflowToDisk="false" diskPersistent="false"
+           timeToIdleSeconds="1200" timeToLiveSeconds="21600"
+           memoryStoreEvictionPolicy="LRU"/>
+    <cache name="fabricController-fabriccategory" eternal="false"
+           maxElementsInMemory="30" overflowToDisk="false" diskPersistent="false"
+           timeToIdleSeconds="1200" timeToLiveSeconds="21600"
+           memoryStoreEvictionPolicy="LRU"/>
+    <cache name="fabricController-sameLevelCategory" eternal="false"
+           maxElementsInMemory="30" overflowToDisk="false" diskPersistent="false"
+           timeToIdleSeconds="1200" timeToLiveSeconds="21600"
+           memoryStoreEvictionPolicy="LRU"/>
+    <cache name="fabricController-sameLevelSourceDetail" eternal="false"
+           maxElementsInMemory="30" overflowToDisk="false" diskPersistent="false"
+           timeToIdleSeconds="1200" timeToLiveSeconds="21600"
+           memoryStoreEvictionPolicy="LRU"/>
+</ehcache>

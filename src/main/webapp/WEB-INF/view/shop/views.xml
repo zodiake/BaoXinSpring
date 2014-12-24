@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    <!-- 卖家中心 -->
+    <!-- 来自买家的评论 -->
+    <definition name="buyer_comments" extends="seller_mainTemplate">
+        <put-attribute name="main" value="/WEB-INF/view/shop/fromBuyer.jsp"></put-attribute>
+        <put-list-attribute name="styles">
+            <add-attribute value="/resources/css/action.css"></add-attribute>
+        </put-list-attribute>
+        <put-list-attribute name="script">
+            <add-attribute value="/resources/js/shop/shop.js"></add-attribute>
+            <add-attribute value="/resources/js/buyerCenterPublic.js"></add-attribute>
+        </put-list-attribute>
+    </definition>
+
+    <!-- 我的平台 -->
+    <!-- 评价管理 -->
+    <definition name="buyerCenterFromSeller" extends="buyer_mainTemplate">
+        <put-attribute name="main" value="/WEB-INF/view/shop/buyerCenterFromSeller.jsp"></put-attribute>
+        <put-list-attribute name="styles">
+            <add-attribute value="/resources/css/action.css"></add-attribute>
+        </put-list-attribute>
+        <put-list-attribute name="script">
+            <add-attribute value="/resources/js/shop/buyer_shop.js"></add-attribute>
+            <add-attribute value="/resources/js/buyerCenterPublic.js"></add-attribute>
+        </put-list-attribute>
+    </definition>
+
+    <!-- 关注的供应商 -->
+    <definition name="favourite.listShop" extends="buyer_mainTemplate">
+        <put-attribute name="main" value="/WEB-INF/view/shop/favouriteShop.jsp"></put-attribute>
+        <put-list-attribute name="styles">
+            <add-attribute value="/resources/css/base.css"></add-attribute>
+            <add-attribute value="/resources/css/begbuy.css"></add-attribute>
+        </put-list-attribute>
+        <put-list-attribute name="script">
+            <add-attribute value="/resources/js/shop/favouriteShop.js"></add-attribute>
+            <add-attribute value="/resources/js/buyerCenterPublic.js"></add-attribute>
+        </put-list-attribute>
+    </definition>
+
+    <definition name="provider_shop_template" template="/WEB-INF/view/template/provider_shop_template.jsp">
+        <put-attribute name="header" value="/WEB-INF/view/template/header.jsp"></put-attribute>
+        <put-attribute name="providerInfo" value="/WEB-INF/view/shop/providerInfo.jsp"></put-attribute>
+        <put-attribute name="category" value="/WEB-INF/view/shop/category.jsp"></put-attribute>
+        <put-attribute name="newItems" value="/WEB-INF/view/shop/newItem.jsp"></put-attribute>
+        <put-attribute name="footer" value="/WEB-INF/view/template/footer.jsp"></put-attribute>
+    </definition>
+    <!-- 供应商店铺主页 -->
+    <definition name="provider_index" extends="provider_shop_template">
+        <put-attribute name="main" value="/WEB-INF/view/shop/providerIndex.jsp"></put-attribute>
+        <put-list-attribute name="script">
+            <add-attribute value="/resources/js/shop/provider_shop.js"></add-attribute>
+            <add-attribute value="/resources/js/buyerCenterPublic.js"></add-attribute>
+            <add-attribute value="/resources/js/shoppingCart.js"></add-attribute>
+            <add-attribute value="/resources/js/favourite/favourite.js"></add-attribute>
+            <add-attribute value="/resources/js/sampleBook.js"></add-attribute>
+            <add-attribute value="/resources/js/shop/favouriteShop.js"></add-attribute>
+        </put-list-attribute>
+    </definition>
+
+    <!-- 服务商企业信息 -->
+    <definition name="provider_detail" extends="viewTemplate">
+        <put-attribute name="main" value="/WEB-INF/view/shop/providerDetail.jsp"></put-attribute>
+        <put-list-attribute name="styles">
+            <add-attribute value="/resources/css/base.css"></add-attribute>
+            <add-attribute value="/resources/css/begbuy.css"></add-attribute>
+        </put-list-attribute>
+        <put-list-attribute name="script">
+            <add-attribute value="/resources/js/shop/favouriteShop.js"></add-attribute>
+            <add-attribute value="/resources/js/buyerCenterPublic.js"></add-attribute>
+        </put-list-attribute>
+    </definition>
+
+    <!--供应商搜索结果-->
+    <definition name="shop_search" extends="viewTemplate">
+        <put-attribute name="main" value="/WEB-INF/view/shop/search.jsp"></put-attribute>
+        <put-list-attribute name="styles">
+            <add-attribute value="/resources/css/action.css"></add-attribute>
+        </put-list-attribute>
+        <put-list-attribute name="script">
+            <add-attribute value="/resources/js/shop/search.js"></add-attribute>
+            <add-attribute value="/resources/js/buyerCenterPublic.js"></add-attribute>
+        </put-list-attribute>
+    </definition>
+</tiles-definitions>

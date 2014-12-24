@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+    <!--广告添加-->
+    <definition name="ad_create" extends="adminTemplate">
+        <put-attribute name="main" value="/WEB-INF/view/infoManage/adForm.jsp"></put-attribute>
+        <put-list-attribute name="script">
+            <add-attribute value="/resources/adapters/jquery.js"></add-attribute>
+            <add-attribute value="/resources/js/ajaxfileupload.js"></add-attribute>
+            <add-attribute value="/resources/js/infoManage.js"></add-attribute>
+        </put-list-attribute>
+    </definition>
+    <!--广告编辑-->
+    <definition name="ad_edit" extends="adminTemplate">
+        <put-attribute name="main" value="/WEB-INF/view/infoManage/adEdit.jsp"></put-attribute>
+        <put-list-attribute name="script">
+            <add-attribute value="/resources/adapters/jquery.js"></add-attribute>
+            <add-attribute value="/resources/js/ajaxfileupload.js"></add-attribute>
+            <add-attribute value="/resources/js/infoManage.js"></add-attribute>
+        </put-list-attribute>
+    </definition>
+    <!--广告列表-->
+    <definition name="ad_list" extends="adminTemplate">
+        <put-attribute name="main" value="/WEB-INF/view/infoManage/adList.jsp"></put-attribute>
+        <put-list-attribute name="script">
+            <add-attribute value="/resources/js/infoManage.js"></add-attribute>
+        </put-list-attribute>
+    </definition>
+
+    <!--广告栏位列表-->
+    <definition name="adp_list" extends="adminTemplate">
+        <put-attribute name="main" value="/WEB-INF/view/infoManage/adPositionList.jsp"></put-attribute>
+        <put-list-attribute name="script">
+            <add-attribute value="/resources/js/infoManage.js"></add-attribute>
+        </put-list-attribute>
+    </definition>
+
+
+    <!--资讯添加-->
+    <definition name="info_create" extends="adminTemplate">
+        <put-attribute name="main" value="/WEB-INF/view/infoManage/infoForm.jsp"></put-attribute>
+        <put-list-attribute name="script">
+            <add-attribute value="/resources/ckeditor.js"></add-attribute>
+            <add-attribute value="/resources/adapters/jquery.js"></add-attribute>
+            <add-attribute value="/resources/js/ajaxfileupload.js"></add-attribute>
+            <add-attribute value="/resources/js/infoManage.js"></add-attribute>
+        </put-list-attribute>
+    </definition>
+    <!--资讯编辑-->
+    <definition name="info_edit" extends="adminTemplate">
+        <put-attribute name="main" value="/WEB-INF/view/infoManage/infoEdit.jsp"></put-attribute>
+        <put-list-attribute name="script">
+            <add-attribute value="/resources/ckeditor.js"></add-attribute>
+            <add-attribute value="/resources/adapters/jquery.js"></add-attribute>
+            <add-attribute value="/resources/js/ajaxfileupload.js"></add-attribute>
+            <add-attribute value="/resources/js/infoManage.js"></add-attribute>
+        </put-list-attribute>
+    </definition>
+    <!--资讯列表-->
+    <definition name="info_list" extends="adminTemplate">
+        <put-attribute name="main" value="/WEB-INF/view/infoManage/infoList.jsp"></put-attribute>
+        <put-list-attribute name="script">
+            <add-attribute value="/resources/adapters/jquery.js"></add-attribute>
+            <add-attribute value="/resources/js/infoManage.js"></add-attribute>
+        </put-list-attribute>
+    </definition>
+
+    <!--资讯查看-->
+    <definition name="info_view" extends="adminTemplate">
+        <put-attribute name="main" value="/WEB-INF/view/infoManage/infoView.jsp"></put-attribute>
+        <put-list-attribute name="script"></put-list-attribute>
+    </definition>
+    <!--资讯分类列表-->
+    <definition name="info_cate_list" extends="adminTemplate">
+        <put-attribute name="main" value="/WEB-INF/view/infoManage/infoCategory.jsp"></put-attribute>
+        <put-list-attribute name="script">
+            <add-attribute value="/resources/adapters/jquery.js"></add-attribute>
+            <add-attribute value="/resources/js/infoManage.js"></add-attribute>
+        </put-list-attribute>
+    </definition>
+
+    <!--前台资讯列表-->
+    <definition name="infoShowList" extends="viewTemplate">
+        <put-attribute name="main" value="/WEB-INF/view/infoManage/infoShowList.jsp"></put-attribute>
+        <put-list-attribute name="styles">
+            <add-attribute value="/resources/css/base.css"></add-attribute>
+            <add-attribute value="/resources/css/begbuy.css"></add-attribute>
+        </put-list-attribute>
+        <put-list-attribute name="script">
+            <add-attribute value="/resources/js/buyerCenterPublic.js"></add-attribute>
+        </put-list-attribute>
+    </definition>
+
+    <!--前台资讯详情-->
+    <definition name="infoDetail" extends="viewTemplate">
+        <put-attribute name="main" value="/WEB-INF/view/infoManage/infoView.jsp"></put-attribute>
+        <put-list-attribute name="styles">
+            <add-attribute value="/resources/css/base.css"></add-attribute>
+            <add-attribute value="/resources/css/begbuy.css"></add-attribute>
+        </put-list-attribute>
+        <put-list-attribute name="script">
+            <add-attribute value="/resources/js/buyerCenterPublic.js"></add-attribute>
+        </put-list-attribute>
+    </definition>
+
+    <!--前台公告列表-->
+    <definition name="noticeShowList" extends="viewTemplate">
+        <put-attribute name="main" value="/WEB-INF/view/infoManage/noticeShowList.jsp"></put-attribute>
+        <put-list-attribute name="styles">
+            <add-attribute value="/resources/css/base.css"></add-attribute>
+            <add-attribute value="/resources/css/begbuy.css"></add-attribute>
+        </put-list-attribute>
+        <put-list-attribute name="script">
+            <add-attribute value="/resources/js/buyerCenterPublic.js"></add-attribute>
+        </put-list-attribute>
+    </definition>
+
+    <!--前台公告详情-->
+    <definition name="noticeDetail" extends="viewTemplate">
+        <put-attribute name="main" value="/WEB-INF/view/infoManage/noticeView.jsp"></put-attribute>
+        <put-list-attribute name="styles">
+            <add-attribute value="/resources/css/base.css"></add-attribute>
+            <add-attribute value="/resources/css/begbuy.css"></add-attribute>
+        </put-list-attribute>
+        <put-list-attribute name="script">
+            <add-attribute value="/resources/js/buyerCenterPublic.js"></add-attribute>
+        </put-list-attribute>
+    </definition>
+
+    <!--826专题列表-->
+    <definition name="topicShowList" extends="viewTemplate">
+        <put-attribute name="main" value="/WEB-INF/view/infoManage/topicShowList.jsp"></put-attribute>
+        <put-list-attribute name="styles">
+            <add-attribute value="/resources/css/base.css"></add-attribute>
+            <add-attribute value="/resources/css/begbuy.css"></add-attribute>
+        </put-list-attribute>
+        <put-list-attribute name="script">
+            <add-attribute value="/resources/js/buyerCenterPublic.js"></add-attribute>
+        </put-list-attribute>
+    </definition>
+
+    <!--826专题详情-->
+    <definition name="topicDetail" extends="viewTemplate">
+        <put-attribute name="main" value="/WEB-INF/view/infoManage/topicView.jsp"></put-attribute>
+        <put-list-attribute name="styles">
+            <add-attribute value="/resources/css/base.css"></add-attribute>
+            <add-attribute value="/resources/css/begbuy.css"></add-attribute>
+        </put-list-attribute>
+        <put-list-attribute name="script">
+            <add-attribute value="/resources/js/buyerCenterPublic.js"></add-attribute>
+        </put-list-attribute>
+    </definition>
+
+    <!--1022专题列表-->
+    <definition name="topic1022ShowList" extends="viewTemplate">
+        <put-attribute name="main" value="/WEB-INF/view/infoManage/topic1022ShowList.jsp"></put-attribute>
+        <put-list-attribute name="styles">
+            <add-attribute value="/resources/css/base.css"></add-attribute>
+            <add-attribute value="/resources/css/begbuy.css"></add-attribute>
+        </put-list-attribute>
+        <put-list-attribute name="script">
+            <add-attribute value="/resources/js/buyerCenterPublic.js"></add-attribute>
+        </put-list-attribute>
+    </definition>
+
+    <!--1022专题详情-->
+    <definition name="topic1022Detail" extends="viewTemplate">
+        <put-attribute name="main" value="/WEB-INF/view/infoManage/topic1022View.jsp"></put-attribute>
+        <put-list-attribute name="styles">
+            <add-attribute value="/resources/css/base.css"></add-attribute>
+            <add-attribute value="/resources/css/begbuy.css"></add-attribute>
+        </put-list-attribute>
+        <put-list-attribute name="script">
+            <add-attribute value="/resources/js/buyerCenterPublic.js"></add-attribute>
+        </put-list-attribute>
+    </definition>
+
+    <!--大师访谈专题列表-->
+    <definition name="masterViewShowList" extends="viewTemplate">
+        <put-attribute name="main" value="/WEB-INF/view/infoManage/masterViewList.jsp"></put-attribute>
+        <put-list-attribute name="styles">
+            <add-attribute value="/resources/css/base.css"></add-attribute>
+            <add-attribute value="/resources/css/begbuy.css"></add-attribute>
+        </put-list-attribute>
+        <put-list-attribute name="script">
+            <add-attribute value="/resources/js/buyerCenterPublic.js"></add-attribute>
+        </put-list-attribute>
+    </definition>
+
+    <!--大师访谈专题详情-->
+    <definition name="masterViewDetail" extends="viewTemplate">
+        <put-attribute name="main" value="/WEB-INF/view/infoManage/masterView.jsp"></put-attribute>
+        <put-list-attribute name="styles">
+            <add-attribute value="/resources/css/base.css"></add-attribute>
+            <add-attribute value="/resources/css/begbuy.css"></add-attribute>
+        </put-list-attribute>
+        <put-list-attribute name="script">
+            <add-attribute value="/resources/js/buyerCenterPublic.js"></add-attribute>
+        </put-list-attribute>
+    </definition>
+
+</tiles-definitions>

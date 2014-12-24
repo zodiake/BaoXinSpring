@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../resources/js/jquery-1.11.1.min.js"></script>
+    <script>
+        $(function () {
+            var template = $('<div></div>');
+            template.css('position', 'absolute');
+            template.css('top', '20%');
+            template.css('left', '30%');
+            template.append("<div>财加财首页提示信息改为“您的浏览器版本过低，请升级</div>");
+            template.append("<div>如果您使用的是360浏览器，请将其设置为极速模式，具体方法如下图。</div>");
+            template.append("<img src='/images/hint.jpg/'>")
+            template.appendTo($('body'));
+        });
+    </script>
+</head>
+<body>
+<div>
+<div class="blockLA bord clear" id="blockA">
+<div class="tab1 clear">
+    <a name="pllist_full"> </a>
+    <ul>
+        <li class="tk1 active"><a>剧集列表</a></li>
+        <!--<li class="tk1"><a>剧集列表</a></li>-->
+        <li class="tk2"><a>片 花</a></li>
+        <li class="tk3"><a>剧集介绍</a></li>
+        <li class="tk4"><a>相 关</a></li>
+        <li class="tk5"><a>影 评</a></li>
+
+    </ul>
+    <a href="http://tv.sohu.com/drama/us/" target="_blank" style="font-size:14px;font-weight:bold;"><center>更多美剧</center></a>
+</div>
+<div class="tab1line"></div>
+
+<div class="tab1cont" id="allist" style="display: block;">
+
+    <div class="d1 clear">
+        <div class="l">
+
+        </div>
+
+
+        <div class="r">
+            <div class="d1s r" id="clean">
+                <span class="tex color1">超清</span>
+                <span class="arrow"></span>
+                <ul style="display: none;"><li><a>高清</a></li>
+                    <li><a>标清</a></li>
+                </ul>
+            </div>
+
+            <div class="d1s r" id="lang">
+                <span class="tex color1">英语</span>
+                <span class="arrow"></span>
+                <ul style="display:none;"><li><a>无</a></li></ul></div>
+        </div>
+
+    </div>
+
+
+
+
+    <div id="list_asc" class="hidden palist">
+
+        <div class="d2">
+            <ul id="la">
+
+                <li rel="0" class="active"><a>1-4</a></li>
+            </ul>
+            <a id="getdesc" class="a1 color3" title="剧集从后到前排序">更改排序</a>
+        </div>
+        <div class="jiall">
+            共23集,更新至<strong>4</strong>集
+
+            <font color="red">更新时间：每周三更新1集</font>
+
+        </div>
+        <div class="pp similarLists">
+
+
+
+            <ul style="display: block;">
+                <li clear="21" class="ppc"><a target="_blank" href="http://tv.sohu.com/20141008/n404908778.shtml"><span class="label"></span><img height="90" width="120" alt="闪电侠第1季第1集" src="http://photocdn.sohu.com/20141008/vrsb1422599.jpg"></a><a class="ch" title="超清"></a><span><strong><a target="_blank" href="http://tv.sohu.com/20141008/n404908778.shtml">第1集</a> </strong><em rel="2025213">播放：7690088次</em></span></li>
+                <li rel="2014-10-15-10-49-52" clear="21" class="ppc"><a target="_blank" href="http://tv.sohu.com/20141015/n405138163.shtml"><span class="label"></span><img height="90" width="120" alt="闪电侠第1季第2集" src="http://photocdn.sohu.com/20141015/vrsb1430028.jpg"></a><a class="ch" title="超清"></a><span><strong><a target="_blank" href="http://tv.sohu.com/20141015/n405138163.shtml">第2集</a> </strong><em rel="2035587">播放：4627974次</em></span></li>
+                <li rel="2014-10-22-11-07-01" clear="21" class="ppc"><a target="_blank" href="http://tv.sohu.com/20141022/n405360194.shtml"><span class="label"></span><img height="90" width="120" alt="闪电侠第1季第3集" src="http://photocdn.sohu.com/20141022/vrsb1436912.jpg"></a><a class="ch" title="超清"></a><span><strong><a target="_blank" href="http://tv.sohu.com/20141022/n405360194.shtml">第3集</a> </strong><em rel="2045402">播放：3527112次</em></span></li>
+                <li rel="2014-10-29-10-52-05" clear="21" class="ppc"><a target="_blank" href="http://tv.sohu.com/20141029/n405573655.shtml"><span class="label"></span><img height="90" width="120" alt="闪电侠第1季第4集" src="http://photocdn.sohu.com/20141029/vrsb1443002.jpg"></a><a class="ch" title="超清"></a><span><strong><a target="_blank" href="http://tv.sohu.com/20141029/n405573655.shtml">第4集</a> </strong><em rel="2054576">播放：3820091次</em></span></li>
+
+            </ul>
+
+
+
+        </div>
+
+        <div class="d2">
+            <ul id="lb">
+                <li rel="0" class="active"><a>1-4</a></li>
+
+            </ul>
+        </div>
+    </div>
+
+
+
+    <div id="list_desc" class="palist">
+
+        <div class="d2">
+            <ul id="lc">
+                <!-- <div id="list_desc" class="hidden palist">
+                           <div class="d2">
+                           <ul id="lc"> -->
+                <li rel="0" class="active"><a>4-1</a></li>
+
+            </ul>
+            <a id="getasc" class="a1 color3" title="剧集从前到后排序">更改排序</a>
+
+        </div>
+        <div class="jiall">
+            共23集,更新至<strong>4</strong>集
+
+            <font color="red">更新时间：每周三更新1集</font>
+
+        </div>
+        <div class="pp similarLists">
+
+
+
+            <ul style="display: block;">
+                <li rel="2014-10-29-10-52-05" clear="21" class="ppc"><a target="_blank" href="http://tv.sohu.com/20141029/n405573655.shtml"><span class="label"></span><img height="90" width="120" alt="闪电侠第1季第4集" src="http://photocdn.sohu.com/20141029/vrsb1443002.jpg"></a><a class="ch" title="超清"></a><span><strong><a target="_blank" href="http://tv.sohu.com/20141029/n405573655.shtml">第4集</a> </strong><em rel="2054576">播放：3820091次</em></span></li>
+                <li rel="2014-10-22-11-07-01" clear="21" class="ppc"><a target="_blank" href="http://tv.sohu.com/20141022/n405360194.shtml"><span class="label"></span><img height="90" width="120" alt="闪电侠第1季第3集" src="http://photocdn.sohu.com/20141022/vrsb1436912.jpg"></a><a class="ch" title="超清"></a><span><strong><a target="_blank" href="http://tv.sohu.com/20141022/n405360194.shtml">第3集</a> </strong><em rel="2045402">播放：3527112次</em></span></li>
+                <li rel="2014-10-15-10-49-52" clear="21" class="ppc"><a target="_blank" href="http://tv.sohu.com/20141015/n405138163.shtml"><span class="label"></span><img height="90" width="120" alt="闪电侠第1季第2集" src="http://photocdn.sohu.com/20141015/vrsb1430028.jpg"></a><a class="ch" title="超清"></a><span><strong><a target="_blank" href="http://tv.sohu.com/20141015/n405138163.shtml">第2集</a> </strong><em rel="2035587">播放：4627974次</em></span></li>
+                <li clear="21" class="ppc"><a target="_blank" href="http://tv.sohu.com/20141008/n404908778.shtml"><span class="label"></span><img height="90" width="120" alt="闪电侠第1季第1集" src="http://photocdn.sohu.com/20141008/vrsb1422599.jpg"></a><a class="ch" title="超清"></a><span><strong><a target="_blank" href="http://tv.sohu.com/20141008/n404908778.shtml">第1集</a> </strong><em rel="2025213">播放：7690088次</em></span></li>
+            </ul>
+
+
+
+        </div>
+
+        <div class="d2">
+            <ul id="ld">
+                <li rel="0" class="active"><a>4-1</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="blank12H"></div>
+
+
+
+
+</div>
+<!-- allist tab1cont -->
+
+<!--簸告娆tab -->
+<div class="tab1cont" style="display: none;">
+    <div id="ablumph">
+
+
+
+
+        <div class="bti clear"><h2>闪电侠第1季  预告片</h2></div>
+
+        <div class="pp pp1">
+            <ul>
+                <li><a target="_blank" href="http://tv.sohu.com/20141029/n405577056.shtml"><img height="90" width="120" alt="《闪电侠》第1季第5集预告" src="http://photocdn.sohu.com/20141029/vrsb1443139.jpg"></a>  <span><strong><a target="_blank" href="http://tv.sohu.com/20141029/n405577056.shtml" title="《闪电侠》第1季第5集预告">《闪电侠》第1季第5集预告</a></strong><em>发布时间：2014-10-29</em></span></li>
+                <li><a target="_blank" href="http://tv.sohu.com/20141022/n405365425.shtml"><img height="90" width="120" alt="《闪电侠》第1季第4集预告" src="http://photocdn.sohu.com/20141022/vrsb1437122.jpg"></a>  <span><strong><a target="_blank" href="http://tv.sohu.com/20141022/n405365425.shtml" title="《闪电侠》第1季第4集预告">《闪电侠》第1季第4集预告</a></strong><em>发布时间：2014-10-22</em></span></li>
+                <li><a target="_blank" href="http://tv.sohu.com/20141015/n405141081.shtml"><img height="90" width="120" alt="《闪电侠》第1季第3集预告" src="http://photocdn.sohu.com/20141015/vrsb1430191.jpg"></a>  <span><strong><a target="_blank" href="http://tv.sohu.com/20141015/n405141081.shtml" title="《闪电侠》第1季第3集预告">《闪电侠》第1季第3集预告</a></strong><em>发布时间：2014-10-15</em></span></li>
+                <li><a target="_blank" href="http://tv.sohu.com/20140516/n399647848.shtml"><img height="90" width="120" alt="《闪电侠》正式版预告" src="http://photocdn.sohu.com/20140516/vrsb1270121.jpg"></a>  <span><strong><a target="_blank" href="http://tv.sohu.com/20140516/n399647848.shtml" title="《闪电侠》正式版预告">《闪电侠》正式版预告</a></strong><em>发布时间：2014-05-16</em></span></li>
+                <li><a target="_blank" href="http://tv.sohu.com/20140515/n399598283.shtml"><img height="90" width="120" alt="《闪电侠》概念版预告" src="http://photocdn.sohu.com/20140515/vrsb1268626.jpg"></a>  <span><strong><a target="_blank" href="http://tv.sohu.com/20140515/n399598283.shtml" title="《闪电侠》概念版预告">《闪电侠》概念版预告</a></strong><em>发布时间：2014-05-15</em></span></li>
+
+            </ul>
+        </div>
+
+        <div class="line1"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+</div>
+<!--扶集介辄tab-->
+<div class="tab1cont" style="display: none;">
+    <div id="ablum2">
+
+        <div class="pagecont" style="display: block;">
+            <div class="listJs"><div class="bti"><h3><span>闪电侠第1季</span>剧情介绍</h3></div><div class="wz">Barry Allen在11岁的时候，他的母亲死于一次离奇的恐怖事故，而他父亲更被错误指认为凶手，而他父亲的挚友，警探Joe West领养了他。现在Barry Allen已成为一个聪明﹑上进﹑讨喜的CSI鉴证分析员，与此同时他为了调查母亲死亡的真相，于是追踪起各种都市传说，也同时见识了先进的科技。近期Barry Allen迷上了由有远见的科学家Harrison Wells及其S.T.A.R.实验室团队开发的粒子加速器，其功能指对能量及医学界都会有飞跃的进步；然而在公开亮相当日，粒子加速器爆炸并引起了一股风暴，不少人因此丧命，而Barry Allen则被雷击。长达9个月的昏迷苏醒后，Barry Allen发现自己因祸得福，得到超高速的力量，令他决定使用此力量保护中心城。不过他随即发现他并非唯一一个“超人类”，自那事故后，中心城的失踪事故及不明原因死亡事件急剧增加，而且有人在爆炸事件后，成了能使出风暴之力的人。于是主角现在有了新目标，利用他的超高速保护市民，以及调查母亲死亡的真相，为父亲正名。虽然目前仅有部份密友及同事知道他的真面目，但世人将会都认识这位新英雄——闪电侠。</div></div><div class="listJs"><div class="bti"><h3><span>闪电侠第1季</span>第1集</h3> <a target="_blank" href="http://tv.sohu.com/20141008/n404908778.shtml" class="btns9" onmouseover="this.className='btns9 btns9Over'" onmouseout="this.className='btns9 btns9Out'" onmousedown="this.className='btns9 btns9Down'">观 看</a></div><div class="wz">Barry Allen（Grant Gustin）11岁那年，他的母亲在一起离奇而可怕的事故中遇难，父亲则被错误地指控为谋杀犯。这场悲剧彻底改变了Barry的生活，但Joe West侦探（Jesse L. Martin）在他最困难的时候伸出了援手。Joe既是Barry最好的朋友Iris（Candice Patton）的父亲，也相当于他的养父。在Joe的悉心照料下，Barry如今已成长为一位聪明的、有进取心的、惹人喜爱的犯罪现场调查员。他没有忘记当年家中遭遇的不幸，因此下决心要查清母亲死亡的真相，还父亲一个清白。很快，他所找到的线索将他引向各种各样无法用常理来解释的都市传说和民间故事，而这其中包含的先进科技更是让他大开眼界。</div></div><div class="listJs"><div class="bti"><h3><span>闪电侠第1季</span>第2集</h3> <a target="_blank" href="http://tv.sohu.com/20141015/n405138163.shtml" class="btns9" onmouseover="this.className='btns9 btns9Over'" onmouseout="this.className='btns9 btns9Out'" onmousedown="this.className='btns9 btns9Down'">观 看</a></div><div class="wz">大学举办聚会活动来庆祝科学家Simon Stagg（William Sadler）所取得的成就，Barry陪伴Iris参加。六个枪手闯入活动现场实施抢劫，Barry立刻「转换」成闪电侠来阻止他们。他救了一个人的性命，但却在抓住坏蛋之前晕了过去，这让他深感失望。当Wells博士、Caitlin和Cisco全力查找他身上的毛病时，Joe严厉批评Barry不该自行其是、将法律不当回事。更重要的是，他不该拿自己的生命冒险。Barry很快意识到那六个枪手并非真正的「六个人」，而是只有一个——他是一个名叫Danton Black（Michael Christopher Smith）的超级人类，拥有复制自身的超能力。与此同时，Iris对「红条纹」的兴趣越来越浓（一种类似Lois Lane和超人的关系由此诞生）。</div></div><div class="listJs"><div class="bti"><h3><span>闪电侠第1季</span>第3集</h3> <a target="_blank" href="http://tv.sohu.com/20141022/n405360194.shtml" class="btns9" onmouseover="this.className='btns9 btns9Over'" onmouseout="this.className='btns9 btns9Out'" onmousedown="this.className='btns9 btns9Down'">观 看</a></div><div class="wz">Barry和星空实验室团队合力追踪绰号「迷雾」的超级人类Kyle Nimbus（Anthony Carrigan）——这个危险的家伙能够通过自己的身体释放出致命的毒气。为了弄清真相，他们必须回忆粒子加速器爆炸当晚发生的事情，那次可怕的事件导致Caitlin的未婚夫Ronnie（Robbie Amell）不幸殒命。与此同时，多年来从未与Henry见过面的Joe决定到监狱里去看望他，但是Kyle突然跑来向当年亲手逮捕他的Joe寻仇，情况变得极度危险。Iris和Eddie继续向Joe隐瞒他们的爱情关系。</div></div><div class="listJs"><div class="bti"><h3><span>闪电侠第1季</span>第4集</h3> <a target="_blank" href="http://tv.sohu.com/20141029/n405573655.shtml" class="btns9" onmouseover="this.className='btns9 btns9Over'" onmouseout="this.className='btns9 btns9Out'" onmousedown="this.className='btns9 btns9Down'">观 看</a></div><div class="wz">闪电侠阻止了一起抢劫案，但是凶犯在枪击一名守卫之后逃跑了。闪电侠决定留下来抢救伤员而不是去追击凶犯。Joe拿出一本嫌疑人资料册让Barry辨认凶犯，Barry一眼就认出Leonard Snart（Wentworth Miller，《越狱》）是这群劫匪的首领。在调查该案的过程中，一个老朋友从斯塔林城来中心城看望他——Felicity Smoak（Emily Bett Rickards，《绿箭侠》）。Felicity听说了Barry的新“能力”，于是亲自跑来确定他的情况。Snart得到了一把失窃的“冷冻枪”（cold gun），其超强的力量足以杀死闪电侠。</div></div>
+        </div>
+
+
+
+        <div class="page">
+            <a class="bd btnPreOver blur" href="#pllist_full">上一页</a>
+            <em>
+                <a href="#pllist_full" class="current">1</a>
+
+            </em>
+            <a class="bd btnNextOver blur" href="#pllist_full">下一页</a>
+        </div>
+
+
+
+    </div>
+</div>
+<div class="tab1cont" style="display: none;">
+    <div id="ablum3">
+
+
+        <div class="nocont"><p>暂时没有相关视频 ！</p></div>
+
+
+    </div><!--album3-->
+
+</div>
+<div class="tab1cont" style="display: none;">
+    <div id="ablum4">
+        <div class="bti clear"><a onmousedown="this.className='btns4 btns4Down'" onmouseout="this.className='btns4'" onmouseover="this.className='btns4 btns4Over'" class="btns4" id="wjp_lo">写影评</a>共<span id="fullCriticsCount">0</span>条 影评</div>
+        <div class="line1"></div>
+        <div id="fullCriticsList"></div>
+    </div>
+</div>
+<div class="tab1cont" style="display: none;">
+    <div class="wyPl clear" id="ablum5">
+        <div class="comment clear" id="tvcomments"></div>
+
+        <div id="commentlist" class="colist"></div>
+    </div>
+</div>
+
+</div>
+</div>
+</body>
+</html>

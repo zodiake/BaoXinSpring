@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+    <!-- Default Main Template -->
+    <!-- 订单提交-->
+    <definition name="orderTemplate" template="/WEB-INF/view/template/publicCenterMain.jsp">
+        <put-attribute name="header" value="/WEB-INF/view/template/header_buyerCenter.jsp"></put-attribute>
+        <put-attribute name="footer" value="/WEB-INF/view/template/footer.jsp"></put-attribute>
+    </definition>
+
+    <!-- 卖家查看订单详情-->
+    <definition name="sellerViewOrderTemplate" template="/WEB-INF/view/template/publicCenterMain.jsp">
+        <put-attribute name="header" value="/WEB-INF/view/template/header_sellerCenter.jsp"></put-attribute>
+        <put-attribute name="footer" value="/WEB-INF/view/template/footer.jsp"></put-attribute>
+    </definition>
+
+    <!--购物车查看页面-->
+    <definition name="order_shoppingCart" extends="viewTemplate">
+        <put-attribute name="main" value="/WEB-INF/view/order/shoppingCart.jsp"></put-attribute>
+        <put-list-attribute name="styles">
+            <add-attribute value="/resources/css/action.css"></add-attribute>
+        </put-list-attribute>
+        <put-list-attribute name="script">
+            <add-attribute value="/resources/js/shoppingCart.js"></add-attribute>
+            <add-attribute value="/resources/js/buyerCenterPublic.js"></add-attribute>
+        </put-list-attribute>
+    </definition>
+
+    <!--订单提交页面-->
+    <definition name="order_checkOut" extends="orderTemplate">
+        <put-attribute name="main" value="/WEB-INF/view/order/orderCheckOut.jsp"></put-attribute>
+        <put-list-attribute name="styles">
+            <add-attribute value="/resources/css/action.css"></add-attribute>
+        </put-list-attribute>
+        <put-list-attribute name="script">
+            <add-attribute value="/resources/js/shoppingCart.js"></add-attribute>
+            <add-attribute value="/resources/js/buyerCenterPublic.js"></add-attribute>
+            <add-attribute value="/resources/js/geo.js"></add-attribute>
+            <add-attribute value="/resources/js/user/address.js"></add-attribute>
+        </put-list-attribute>
+    </definition>
+
+    <!--订单提交成功页面-->
+    <definition name="order_orderSubmitSuccess" extends="orderTemplate">
+        <put-attribute name="main" value="/WEB-INF/view/order/orderSubmitSuccess.jsp"></put-attribute>
+        <put-list-attribute name="styles">
+            <add-attribute value="/resources/css/action.css"></add-attribute>
+        </put-list-attribute>
+        <put-list-attribute name="script">
+            <add-attribute value="/resources/js/buyerCenterPublic.js"></add-attribute>
+        </put-list-attribute>
+    </definition>
+    <!--订单提交失败页面-->
+    <definition name="order_orderSubmitFail" extends="orderTemplate">
+        <put-attribute name="main" value="/WEB-INF/view/order/orderSubmitFail.jsp"></put-attribute>
+        <put-list-attribute name="styles">
+            <add-attribute value="/resources/css/action.css"></add-attribute>
+        </put-list-attribute>
+        <put-list-attribute name="script">
+            <add-attribute value="/resources/js/buyerCenterPublic.js"></add-attribute>
+        </put-list-attribute>
+    </definition>
+
+    <!--买家订单列表-->
+    <definition name="order_buyerOrderList" extends="buyer_mainTemplate">
+        <put-attribute name="main" value="/WEB-INF/view/order/buyerOrderList.jsp"></put-attribute>
+        <put-list-attribute name="styles">
+            <add-attribute value="/resources/css/action.css"></add-attribute>
+        </put-list-attribute>
+        <put-list-attribute name="script">
+            <add-attribute value="/resources/js/shoppingOrder.js"></add-attribute>
+            <add-attribute value="/resources/js/buyerCenterPublic.js"></add-attribute>
+        </put-list-attribute>
+    </definition>
+
+    <!--卖家订单列表-->
+    <definition name="order_sellerOrderList" extends="seller_mainTemplate">
+        <put-attribute name="main" value="/WEB-INF/view/order/sellerOrderList.jsp"></put-attribute>
+        <put-list-attribute name="styles">
+            <add-attribute value="/resources/css/action.css"></add-attribute>
+        </put-list-attribute>
+        <put-list-attribute name="script">
+            <add-attribute value="/resources/js/shoppingOrder.js"></add-attribute>
+            <add-attribute value="/resources/js/buyerCenterPublic.js"></add-attribute>
+        </put-list-attribute>
+    </definition>
+    <!--买家查看订单详情-->
+    <definition name="order_buyerViewOrderDetail" extends="orderTemplate">
+        <put-attribute name="main" value="/WEB-INF/view/order/buyerOrderDetail.jsp"></put-attribute>
+        <put-list-attribute name="styles">
+            <add-attribute value="/resources/css/action.css"></add-attribute>
+        </put-list-attribute>
+        <put-list-attribute name="script">
+            <add-attribute value="/resources/js/buyerCenterPublic.js"></add-attribute>
+        </put-list-attribute>
+    </definition>
+    <!--卖家查看订单详情-->
+    <definition name="order_sellerViewOrderDetail" extends="sellerViewOrderTemplate">
+        <put-attribute name="main" value="/WEB-INF/view/order/sellerOrderDetail.jsp"></put-attribute>
+        <put-list-attribute name="styles">
+            <add-attribute value="/resources/css/action.css"></add-attribute>
+        </put-list-attribute>
+        <put-list-attribute name="script">
+            <add-attribute value="/resources/js/buyerCenterPublic.js"></add-attribute>
+            <add-attribute value="/resources/js/shoppingOrder.js"></add-attribute>
+        </put-list-attribute>
+    </definition>
+
+</tiles-definitions>
